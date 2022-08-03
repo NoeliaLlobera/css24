@@ -4,6 +4,11 @@
         margin: 0px;
         padding: 0px;
     }
+    nav, header, #hero, main, #banner, #extra, #image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     p{
         font-family: sans-serif;
         font-size: 20px;
@@ -37,12 +42,7 @@
     }
 
 /* VERSIÓN MÒVIL */
-@media all and (max-width:768px){
-    nav, header, #hero, main, #banner, #extra, #image{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+@media all and (max-width:424px){
     nav, header{
         height: 60px;
     }
@@ -57,3 +57,78 @@
     }
 }
 /* VERSIÓN TABLET */
+@media all and (min-width:425px) and (max-width:768px){
+    #container{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 5vh 30vh 30vh auto;
+        grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu banner banner"
+        "menu extra image"
+        ;
+    }
+    header{
+        grid-area: header;
+    }
+    #hero{
+        grid-area: hero;
+    }
+    nav{
+        grid-area: menu;
+    }
+    main{
+        grid-area: main;
+    }
+    #banner{
+        grid-area: banner;
+    }
+    #extra{
+        grid-area: extra;
+    }
+    #image{
+        grid-area: image;
+    }
+}
+/* VERSIÓN DESKTOP */
+@media all and (min-width:769px){
+    #container{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 5vh 50vh auto;
+        grid-template-areas: 
+        "header menu menu menu"
+        "hero hero hero hero"
+        "main main none image"
+        "main main none extra"
+        "banner banner banner banner"
+        ;
+    }
+    header{
+
+        grid-area: header;
+    }
+    #hero{
+        grid-area: hero;
+    }
+    nav{
+        grid-area: menu;
+    }
+    main{
+        grid-area: main;
+    }
+    #banner{
+        grid-area: banner;
+    }
+    #extra{
+        /* height: 17vh; */
+        grid-area: extra;
+    }
+    #image{
+        grid-area: image;
+    }
+}
