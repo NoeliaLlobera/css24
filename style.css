@@ -98,7 +98,7 @@
     #container{
         height: 100vh;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 5vh 50vh auto;
         grid-template-areas: 
         "header menu menu menu"
